@@ -29,6 +29,7 @@ all_devices = [
     "device_ddrc88bm",
     "device_c8x12v2",
     "device_m2x4",
+    "device_flex8",
     "device_flex",
     "device_flexhtx",
 ]
@@ -42,6 +43,7 @@ device_nanodigi2x8 = ["devices"]
 device_ddrc88bm = ["devices"]
 device_c8x12v2 = ["devices"]
 device_m2x4 = ["devices"]
+device_flex8 = ["devices"]
 device_flex = ["devices"]
 device_flexhtx = ["devices"]
 devices = []
