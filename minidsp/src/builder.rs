@@ -221,6 +221,7 @@ impl Builder {
                         None => device::probe(&device_info),
                         Some(k) => device::by_kind(k),
                     };
+                    println!("=== device_spec.product_name: {0} ===", device_spec.product_name);
 
                     #[cfg(feature = "devices")]
                     if let Some(decoder) = decoder {

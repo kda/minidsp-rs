@@ -74,6 +74,7 @@ impl Client {
             dsp_version: dsp_version_view.read_u8(eeprom::FIRMWARE_VERSION).unwrap(),
             serial: 900000 + (serial_view.read_u16(eeprom::SERIAL_SHORT).unwrap() as u32),
         };
+        println!("=== hw_id: {0} ===", hw_id.hw_id);
         Ok(info)
     }
 

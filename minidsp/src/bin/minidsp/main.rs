@@ -483,6 +483,7 @@ impl FromStr for ProductId {
 }
 
 async fn run_probe(devices: Vec<DeviceHandle>, net: bool) -> Result<()> {
+    println!("=== run_probe ===");
     for (index, dev) in devices.iter().enumerate() {
         println!(
             "{}: Found {} with serial {} at {} [hw_id: {}, dsp_version: {}]",
@@ -523,9 +524,13 @@ async fn main() -> Result<()> {
         .collect()
         .await;
 
+    println!("=== after builder.probe ===");
+    println!("devices.len() = {}", devices.len());
+    println!("opts.subcmd = {}", opts.subcmd);
     devices.sort_by(|a, b| a.device_info.serial.cmp(&b.device_info.serial));
 
     if let Some(SubCommand::Probe { net }) = opts.subcmd {
+        println!("=== before run_probe ===");
         run_probe(devices, net).await?;
         return Ok(());
     }
